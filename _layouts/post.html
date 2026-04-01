@@ -20,10 +20,10 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: "PingFang TC", "Microsoft JhengHei", sans-serif; background-color: var(--bg-pale-blue); color: var(--text-dark); line-height: 1.8; }
         a { text-decoration: none; transition: 0.3s; color: inherit; }
-        h1, h2, h3 { word-break: keep-all; } 
-
+        
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
+        /* 導覽列 */
         header { background: var(--white); padding: 10px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
         .nav-flex { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 24px; font-weight: 900; color: var(--primary-text-blue); display: flex; align-items: center; white-space: nowrap; flex-shrink: 0; }
@@ -32,11 +32,15 @@
         .nav-links a { margin-left: 20px; color: var(--text-dark); font-weight: bold; font-size: 15px; }
         .btn-cta { background: var(--primary-hero-blue); color: white !important; padding: 8px 18px; border-radius: 50px; font-size: 14px; margin-left: 20px; }
 
+        /* 文章區塊 */
         .article-container { max-width: 1000px; margin: 40px auto 0 auto; background: var(--white); border-radius: 20px; padding: 50px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
         .breadcrumb { font-size: 14px; color: #888; margin-bottom: 20px; }
         .breadcrumb a { color: var(--primary-text-blue); }
-        .article-title { font-size: 36px; font-weight: 800; margin-bottom: 20px; line-height: 1.3; }
-        .article-meta { display: flex; align-items: center; font-size: 14px; color: #888; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; flex-wrap: wrap; gap: 10px; }
+        
+        /* 💡 標題修正：允許自然斷行 */
+        .article-title { font-size: 36px; font-weight: 800; margin-bottom: 20px; line-height: 1.4; word-break: normal; overflow-wrap: break-word; }
+        
+        .article-meta { display: flex; align-items: center; font-size: 14px; color: #888; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; flex-wrap: wrap; gap: 12px; }
         .article-hero-img { width: 100%; height: 400px; object-fit: cover; border-radius: 15px; margin-bottom: 30px; }
         
         .article-content { font-size: 18px; color: var(--text-gray); }
@@ -44,17 +48,38 @@
         .article-content h3 { font-size: 24px; color: var(--primary-text-blue); margin: 40px 0 15px 0; border-left: 4px solid var(--primary-hero-blue); padding-left: 10px; }
         .ad-slot-inline { background: #e6f3f9; border: 2px dashed var(--primary-hero-blue); border-radius: 10px; padding: 20px; text-align: center; margin: 30px 0; color: var(--primary-text-blue); font-weight: bold; }
 
-        footer { background: #2D3436; color: #f5f5f5; padding: 60px 0 30px 0; margin-top: 60px; text-align: center; }
-        .footer-logo { font-size: 22px; font-weight: 900; color: var(--primary-hero-blue); margin-bottom: 15px; display: inline-block; }
-        .footer-links a { color: #bbb; margin: 0 12px; font-size: 13px; }
+        /* 💡 新增：回首頁按鈕 */
+        .btn-back-home { display: inline-block; background-color: var(--primary-hero-blue); color: var(--primary-text-blue); font-weight: bold; padding: 12px 30px; border-radius: 50px; transition: 0.3s; margin-top: 20px; }
+        .btn-back-home:hover { background-color: var(--primary-text-blue); color: white; }
 
+        /* 💡 新增：下方推薦閱讀網格 */
+        .more-articles-section { margin-top: 50px; padding-top: 30px; border-top: 2px dashed #f0f0f0; }
+        .more-articles-title { font-size: 20px; font-weight: 800; margin-bottom: 20px; border-left: 4px solid var(--primary-text-blue); padding-left: 10px; color: var(--text-dark); }
+        .more-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+        .mini-card { background: var(--bg-pale-blue); border-radius: 15px; overflow: hidden; border: 1px solid #eef5fa; transition: 0.3s; }
+        .mini-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(74, 144, 226, 0.15); }
+        .mini-card img { width: 100%; height: 140px; object-fit: cover; }
+        .mini-card-body { padding: 15px; }
+        .mini-title { font-size: 15px; font-weight: 700; line-height: 1.4; color: var(--text-dark);}
+
+        footer { background: #2D3436; color: #f5f5f5; padding: 60px 0 30px 0; margin-top: 60px; text-align: center; }
+
+        /* 📱 手機版終極優化 */
         @media (max-width: 768px) { 
             .logo { font-size: 18px; } 
             .nav-links a:not(.btn-cta) { display: none; } 
             .btn-cta { padding: 6px 12px; font-size: 12px; margin-left: 10px; }
-            .article-container { padding: 20px; } 
-            .article-title { font-size: 24px; } 
+            .article-container { padding: 20px; margin-top: 20px;} 
+            
+            /* 解決標題跑版問題 */
+            .article-title { font-size: 24px; line-height: 1.4; } 
+            /* 讓日期作者在手機上整齊排列 */
+            .article-meta { flex-direction: column; align-items: flex-start; gap: 8px; }
+            
             .article-hero-img { height: 200px; } 
+            .more-grid { grid-template-columns: 1fr 1fr; gap: 15px; } /* 手機版並排顯示兩張小圖 */
+            .mini-card img { height: 100px; }
+            .mini-title { font-size: 14px; }
         }
     </style>
 </head>
@@ -79,10 +104,8 @@
         <h1 class="article-title">{{ page.title }}</h1>
         
         <div class="article-meta">
-            <span>📅 {{ page.date }}</span>
-            <span>👤 {{ page.author }}</span>
-            <span>⏱️ 閱讀時間：{{ page.read_time }}</span>
-            <span style="color: var(--primary-text-blue); font-weight: bold;">👀 累積閱讀：{{ page.views }} 次</span>
+            <div>📅 {{ page.date }} &nbsp;|&nbsp; 👤 {{ page.author }}</div>
+            <div>⏱️ 閱讀時間：{{ page.read_time }} &nbsp;|&nbsp; <span style="color: var(--primary-text-blue); font-weight: bold;">👀 累積閱讀：{{ page.views }} 次</span></div>
         </div>
 
         <img src="{{ page.image }}" alt="{{ page.title }}" class="article-hero-img">
@@ -90,15 +113,35 @@
         <div class="article-content">
             {{ content }}
         </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html" class="btn-back-home">🏠 回到首頁，看更多毛孩知識</a>
+        </div>
+
+        <div class="more-articles-section">
+            <h3 class="more-articles-title">推薦給您的其他文章</h3>
+            <div class="more-grid">
+                <article class="mini-card">
+                    <a href="article-1.html">
+                        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80" alt="狗狗">
+                        <div class="mini-card-body"><h4 class="mini-title">換季過敏怎麼辦？醫師教你改善體質</h4></div>
+                    </a>
+                </article>
+                <article class="mini-card">
+                    <a href="article-4.html">
+                        <img src="https://images.unsplash.com/photo-1591769225440-811ad7d6eca3?auto=format&fit=crop&w=600&q=80" alt="刷牙">
+                        <div class="mini-card-body"><h4 class="mini-title">如何幫主子刷牙不被咬？掌握三階段</h4></div>
+                    </a>
+                </article>
+                <article class="mini-card" style="display: none;"> </article>
+            </div>
+        </div>
+
     </main>
 </div>
 
 <footer>
     <div class="container" style="text-align: center;">
-        <a href="index.html" class="footer-logo"><span>寵</span> 寵個毛線</a>
-        <div class="footer-links" style="margin-bottom: 30px;">
-            <a href="#">關於我們</a> | <a href="#">隱私權政策</a> | <a href="#">聯絡我們</a>
-        </div>
         <p style="font-size: 12px; color: #888;">© 2026 寵個毛線 | 專業毛孩調養與知識分享平台. All rights reserved.</p>
     </div>
 </footer>
