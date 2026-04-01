@@ -44,7 +44,26 @@
         .nav-links { display: flex; align-items: center; white-space: nowrap;}
         .nav-links a { margin-left: 20px; font-weight: bold; font-size: 15px; }
         .nav-links a:hover { color: var(--primary-text-blue); }
-        .btn-cta { background: var(--primary-hero-blue); color: white !important; padding: 8px 18px; border-radius: 50px; font-size: 14px; }
+        /* 💡 更新：我要投稿按鈕 (預設狀態) */
+.btn-cta { 
+    background: var(--primary-text-blue); /* 換成飽和的深藍色 */
+    color: white !important; 
+    padding: 8px 22px; 
+    border-radius: 50px; 
+    font-size: 14px; 
+    margin-left: 20px; 
+    font-weight: bold;
+    transition: all 0.3s ease; /* 讓動畫變滑順的關鍵 */
+    box-shadow: 0 4px 10px rgba(74, 144, 226, 0.2); /* 加上淡淡的立體陰影 */
+    display: inline-block;
+}
+
+/* 💡 更新：我要投稿按鈕 (滑鼠移過去的懸浮狀態) */
+.btn-cta:hover { 
+    background: #357abd; /* 顏色變得更深 */
+    transform: translateY(-3px); /* 向上浮動 3px */
+    box-shadow: 0 6px 15px rgba(74, 144, 226, 0.4); /* 陰影範圍擴大，強化立體浮游感 */
+}
 
         .hero { 
             position: relative; width: 100%; height: 280px; background-color: var(--primary-hero-blue); 
