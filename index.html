@@ -6,9 +6,10 @@
     <title>寵個毛線 | 專業毛孩調養與趣味社群 - Pet Yarn</title>
     <meta name="description" content="提供最專業的寵物養護知識、搞笑毛孩影片投稿，讓每個毛爸媽都能輕鬆掌握調養毛孩的秘訣。">
     
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5930015497473852" crossorigin="anonymous"></script>
+
     <style>
         :root {
-            var(--primary-hero-blue): #D0EFFF;
             --primary-hero-blue: #D0EFFF; /* 淡青藍 (Hero 區塊主色) */
             --primary-text-blue: #4A90E2;  /* 文字深藍 */
             --bg-pure-white: #FFFFFF;     /* 純白 */
@@ -40,7 +41,7 @@
         .nav-links a:hover { color: var(--primary-text-blue); }
         .btn-cta { background: var(--primary-hero-blue); color: white !important; padding: 8px 18px; border-radius: 50px; font-size: 14px; }
 
-        /* --- Hero 修改：修復波浪與滿版問題 --- */
+        /* --- Hero 區塊 --- */
         .hero { 
             position: relative;
             width: 100%;
@@ -57,11 +58,10 @@
         .hero::after {
             content: '';
             position: absolute;
-            bottom: -1px; /* 避免產生 1px 的細線白邊 */
+            bottom: -1px; 
             left: 0;
             width: 100%;
             height: 120px;
-            /* 這個 SVG 形狀是針對底部，且顏色配合網頁背景色 */
             background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23F8FCFF' d='M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,133.3C672,128,768,160,864,181.3C960,203,1056,192,1152,176C1248,160,1344,139,1392,128L1440,117.3L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'/%3E%3C/svg%3E");
             background-size: 100% 100%;
             background-repeat: no-repeat;
@@ -73,7 +73,7 @@
         /* 置中口號文字 */
         .hero-content {
             position: absolute;
-            top: 40%; /* 稍微往上提，避開波浪 */
+            top: 40%; 
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
@@ -182,7 +182,7 @@
         <main>
             <div class="ad-slot fade-in-up">
                 🐾 贊助毛孩罐罐 (Leaderboard Ads) 🐾
-                <div style="font-size: 11px; font-weight: normal; margin-top: 4px;">申請通過後，將 AdSense 代碼貼於此處</div>
+                <div style="font-size: 11px; font-weight: normal; margin-top: 4px;">廣告預留位 (審核通過後自動顯示)</div>
             </div>
 
             <article class="card fade-in-up">
