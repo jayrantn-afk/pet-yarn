@@ -4,279 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>寵個毛線 | 專業毛孩調養與趣味社群 - Pet Yarn</title>
-    <meta name="description" content="提供最專業的寵物養護知識、搞笑毛孩影片投稿，讓每個毛爸媽都能輕鬆掌握調養毛孩的秘訣。">
     
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VLJKSLR30"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6VLJKSLR30');
+    </script>
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5930015497473852" crossorigin="anonymous"></script>
 
     <style>
-        :root {
-            --primary-hero-blue: #D0EFFF; 
-            --primary-text-blue: #4A90E2;  
-            --bg-pure-white: #FFFFFF;     
-            --bg-pale-blue: #F8FCFF;      
-            --white: #ffffff;
-            --text-dark: #333333;
-            --text-gray: #7F8C8D;
-            --accent-gold: #F1C40F;
-        }
-
+        :root { --primary-hero-blue: #D0EFFF; --primary-text-blue: #4A90E2; --bg-pale-blue: #F8FCFF; --white: #ffffff; --text-dark: #333333; --text-gray: #7F8C8D; --accent-gold: #F1C40F; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: "PingFang TC", "Microsoft JhengHei", sans-serif; background-color: var(--bg-pale-blue); color: var(--text-dark); line-height: 1.7; }
         a { text-decoration: none; transition: 0.3s; color: inherit; }
         ul { list-style: none; }
         h1, h2, h3 { word-break: keep-all; } 
-
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        /* 進度條 */
         .progress-container { width: 100%; height: 3px; background: transparent; position: fixed; top: 0; z-index: 1002; }
         .progress-bar { height: 3px; background: var(--accent-gold); width: 0%; transition: width 0.1s ease-out; }
-
-        /* 導覽列 */
         header { background: var(--white); padding: 10px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
         .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 24px; font-weight: 900; color: var(--primary-text-blue); display: flex; align-items: center; white-space: nowrap; flex-shrink: 0; }
+        .logo { font-size: 24px; font-weight: 900; color: var(--primary-text-blue); display: flex; align-items: center; white-space: nowrap; }
         .logo span { background: var(--primary-hero-blue); color: white; padding: 2px 8px; border-radius: 8px; margin-right: 6px; }
-        .nav-links { display: flex; align-items: center; white-space: nowrap; }
-        .nav-links a { margin-left: 20px; color: var(--text-dark); font-weight: bold; font-size: 15px; }
-        .nav-links a:hover { color: var(--primary-text-blue); }
+        .nav-links a { margin-left: 20px; font-weight: bold; font-size: 15px; }
         .btn-cta { background: var(--primary-hero-blue); color: white !important; padding: 8px 18px; border-radius: 50px; font-size: 14px; }
-
-        /* 波浪 Hero */
-        .hero { 
-            position: relative; width: 100%; height: 280px; background-color: var(--primary-hero-blue);
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" opacity="0.1"><path d="M12.5 15C10.6 15 9.1 16.5 9.1 18.4s1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4s-1.5-3.4-3.4-3.4zM22.5 15C20.6 15 19.1 16.5 19.1 18.4s1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4s-1.5-3.4-3.4-3.4zM17.5 25C15 25 12.9 27.1 12.9 29.6c0 1.9 1.1 3.5 2.8 4.3c-.6 1.4-.9 2.9-.9 4.4c0 3 2.1 5.5 4.7 6.3c2.6-.8 4.7-3.3 4.7-6.3c0-1.5-.3-3-.9-4.4c1.7-.8 2.8-2.4 2.8-4.3c0-2.5-2.1-4.6-4.6-4.6zm5 10C21.1 35 19.6 36.5 19.6 38.4s1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4s-1.5-3.4-3.4-3.4zM12.5 35C10.6 35 9.1 36.5 9.1 38.4s1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4s-1.5-3.4-3.4-3.4z" fill="%234A90E2"/></svg>');
-            background-repeat: repeat; background-size: 80px 80px;
-        }
-        .hero::after {
-            content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 80px;
-            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23F8FCFF' d='M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,133.3C672,128,768,160,864,181.3C960,203,1056,192,1152,176C1248,160,1344,139,1392,128L1440,117.3L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'/%3E%3C/svg%3E");
-            background-size: 100% 100%; background-repeat: no-repeat; background-position: bottom; pointer-events: none; z-index: 1;
-        }
+        .hero { position: relative; width: 100%; height: 280px; background-color: var(--primary-hero-blue); background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" opacity="0.1"><path d="M12.5 15C10.6 15 9.1 16.5 9.1 18.4s1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4s-1.5-3.4-3.4-3.4zM22.5 15C20.6 15 19.1 16.5 19.1 18.4s1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4s-1.5-3.4-3.4-3.4zM17.5 25C15 25 12.9 27.1 12.9 29.6c0 1.9 1.1 3.5 2.8 4.3c-.6 1.4-.9 2.9-.9 4.4c0 3 2.1 5.5 4.7 6.3c2.6-.8 4.7-3.3 4.7-6.3c0-1.5-.3-3-.9-4.4c1.7-.8 2.8-2.4 2.8-4.3c0-2.5-2.1-4.6-4.6-4.6zm5 10C21.1 35 19.6 36.5 19.6 38.4s1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4s-1.5-3.4-3.4-3.4zM12.5 35C10.6 35 9.1 36.5 9.1 38.4s1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4s-1.5-3.4-3.4-3.4z" fill="%234A90E2"/></svg>'); background-repeat: repeat; background-size: 80px 80px; }
+        .hero::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 80px; background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23F8FCFF' d='M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,133.3C672,128,768,160,864,181.3C960,203,1056,192,1152,176C1248,160,1344,139,1392,128L1440,117.3L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'/%3E%3C/svg%3E"); background-size: 100% 100%; background-repeat: no-repeat; background-position: bottom; pointer-events: none; z-index: 1; }
         .hero-content { position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 90%; z-index: 5; }
-        .hero-content h1 { font-size: 28px; color: var(--text-dark); margin-bottom: 5px; font-weight: 900; }
-        .hero-content p { font-size: 16px; color: var(--primary-text-blue); font-weight: bold; }
-
+        .hero-content h1 { font-size: 28px; font-weight: 900; }
         .content-grid { display: grid; grid-template-columns: 1fr 320px; gap: 40px; margin: 30px 0 60px 0; }
-
-        /* 輪播區 */
         .carousel { position: relative; width: 100%; height: 450px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 40px; background: #000; }
-        .carousel-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.8s ease-in-out; z-index: 1; }
+        .carousel-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.8s; z-index: 1; }
         .carousel-slide.active { opacity: 1; z-index: 2; }
         .carousel-slide img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
-        .carousel-caption { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%); padding: 60px 40px 30px 40px; color: white; }
-        .carousel-tag { background: var(--primary-text-blue); color: white; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 15px; display: inline-block; }
-        .carousel-title { font-size: 28px; font-weight: 800; margin-bottom: 10px; line-height: 1.3; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.2); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 20px; cursor: pointer; z-index: 10; transition: 0.3s; }
-        .carousel-btn:hover { background: rgba(255,255,255,0.6); color: #000; }
-        .prev-btn { left: 20px; }
-        .next-btn { right: 20px; }
-
-        /* 文章網格 */
-        .section-title { font-size: 20px; font-weight: 800; margin-bottom: 20px; border-left: 5px solid var(--primary-text-blue); padding-left: 10px; color: var(--text-dark); }
-        .article-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 25px; margin-bottom: 40px; }
-        .mini-card { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: 0.3s; border: 1px solid #f0f0f0; }
+        .carousel-caption { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0)); padding: 60px 40px 30px; color: white; }
+        .carousel-title { font-size: 28px; font-weight: 800; }
+        .article-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 25px; }
+        .mini-card { background: var(--white); border-radius: 15px; overflow: hidden; border: 1px solid #f0f0f0; transition: 0.3s; }
         .mini-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(74, 144, 226, 0.15); }
         .mini-card img { width: 100%; height: 160px; object-fit: cover; }
         .mini-card-body { padding: 15px; }
-        .mini-tag { color: var(--primary-text-blue); font-size: 11px; font-weight: bold; margin-bottom: 8px; display: block; }
-        .mini-title { font-size: 16px; font-weight: 700; line-height: 1.4; color: var(--text-dark); margin-bottom: 8px; }
-        .mini-title:hover { color: var(--primary-text-blue); }
-        .mini-meta { font-size: 11px; color: #999; display: flex; justify-content: space-between; align-items: center; }
-
-        /* 廣告與側邊欄 */
-        .ad-slot { background: #e6f3f9; border: 2px dashed var(--primary-hero-blue); border-radius: 15px; padding: 25px; text-align: center; margin-bottom: 40px; color: var(--primary-text-blue); font-size: 14px; font-weight: bold; }
+        .mini-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .mini-meta { font-size: 11px; color: #999; display: flex; justify-content: space-between; }
+        .ad-slot { background: #e6f3f9; border: 2px dashed var(--primary-hero-blue); border-radius: 15px; padding: 25px; text-align: center; margin-bottom: 40px; color: var(--primary-text-blue); font-weight: bold; }
         aside { position: sticky; top: 80px; height: fit-content; }
-        .widget { background: var(--white); padding: 20px; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); border: 1px solid #f9f9f9; }
-        .widget-title { color: var(--text-dark); margin-bottom: 15px; font-size: 16px; font-weight: bold; border-left: 4px solid var(--primary-hero-blue); padding-left: 8px; }
-        
-        footer { background: #2D3436; color: #f5f5f5; padding: 60px 0 30px 0; margin-top: 40px; text-align: center;}
-        .footer-logo { font-size: 22px; font-weight: 900; color: var(--primary-hero-blue); margin-bottom: 15px; display: inline-block; }
-        .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .widget { background: var(--white); padding: 20px; border-radius: 20px; margin-bottom: 20px; border: 1px solid #f9f9f9; }
+        .widget-title { margin-bottom: 15px; font-size: 16px; font-weight: bold; border-left: 4px solid var(--primary-hero-blue); padding-left: 8px; }
+        .fade-in-up { opacity: 0; transform: translateY(30px); transition: 0.6s ease-out; }
         .fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
-
-        @media (max-width: 768px) {
-            .logo { font-size: 18px; }
-            .nav-links a:not(.btn-cta) { display: none; } 
-            .btn-cta { padding: 6px 12px; font-size: 12px; margin-left: 10px; }
-            .hero { height: 220px; }
-            .hero-content h1 { font-size: 20px; }
-            .article-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
-            aside { display: none; }
-        }
+        @media (max-width: 768px) { .logo { font-size: 18px; } .nav-links a:not(.btn-cta) { display: none; } .hero { height: 220px; } .content-grid { grid-template-columns: 1fr; } .carousel { height: 250px; } .article-grid { grid-template-columns: 1fr 1fr; } aside { display: none; } }
     </style>
 </head>
 <body>
-
 <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
-
-<header>
-    <div class="container nav-flex">
-        <a href="index.html" class="logo"><span>寵</span> 寵個毛線</a>
-        <nav class="nav-links">
-            <a href="index.html">調養知識</a>
-            <a href="article-2.html">搞笑影片</a>
-            <a href="#">毛孩商店</a>
-            <a href="#" class="btn-cta">我要投稿 📥</a>
-        </nav>
-    </div>
-</header>
-
-<section class="hero">
-    <div class="hero-content">
-        <h1>寵個毛線 | 你的毛孩調養專家</h1>
-        <p>專業、趣味、守護毛孩 🐾</p>
-    </div>
-</section>
-
+<header><div class="container nav-flex"><a href="index.html" class="logo"><span>寵</span> 寵個毛線</a><nav class="nav-links"><a href="index.html">調養知識</a><a href="article-2.html">搞笑影片</a><a href="#" class="btn-cta">我要投稿 📥</a></nav></div></header>
+<section class="hero"><div class="hero-content"><h1>寵個毛線 | 你的毛孩調養專家</h1><p>專業、趣味、守護毛孩 🐾</p></div></section>
 <div class="container" style="margin-top: -30px; position: relative; z-index: 10;">
     <div class="content-grid">
         <main>
-            <div class="ad-slot fade-in-up">
-                🐾 贊助毛孩罐罐 (Leaderboard Ads) 🐾<br>
-                <span style="font-size: 11px; font-weight: normal;">(Google 廣告將在此顯示)</span>
-            </div>
-
+            <div class="ad-slot fade-in-up">🐾 贊助毛孩罐罐 (Leaderboard Ads) 🐾<br><span style="font-size: 11px; font-weight: normal;">(Google 廣告將在此顯示)</span></div>
             <div class="carousel fade-in-up">
-                <div class="carousel-slide active">
-                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=80" alt="狗狗過敏">
-                    <div class="carousel-caption">
-                        <span class="carousel-tag">最新專欄</span>
-                        <a href="article-1.html"><h2 class="carousel-title">換季過敏怎麼辦？專業醫師教你從飲食改善毛孩體質</h2></a>
-                    </div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=80" alt="貓咪搞笑">
-                    <div class="carousel-caption">
-                        <span class="carousel-tag">熱門爆款</span>
-                        <a href="article-2.html"><h2 class="carousel-title">我家貓咪壞掉了！盤點那些讓人噴飯的液體睡姿</h2></a>
-                    </div>
-                </div>
-                <button class="carousel-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
-                <button class="carousel-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+                <div class="carousel-slide active"><img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=80" alt="狗狗"><div class="carousel-caption"><a href="article-1.html"><h2 class="carousel-title">換季過敏怎麼辦？醫師教你改善體質</h2></a></div></div>
+                <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=80" alt="貓咪"><div class="carousel-caption"><a href="article-2.html"><h2 class="carousel-title">我家貓咪壞掉了！盤點噴飯液體睡姿</h2></a></div></div>
             </div>
-
             <h2 class="section-title fade-in-up">為您推薦</h2>
             <div class="article-grid fade-in-up">
-                <article class="mini-card">
-                    <a href="article-1.html"><img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80" alt="狗狗"></a>
-                    <div class="mini-card-body">
-                        <span class="mini-tag">調養專欄</span>
-                        <a href="article-1.html"><h3 class="mini-title">換季過敏怎麼辦？醫師教你改善體質</h3></a>
-                        <div class="mini-meta"><span>📅 2026/04/01</span> <span style="color:var(--primary-text-blue)">👁️ 15,243</span></div>
-                    </div>
-                </article>
-
-                <article class="mini-card">
-                    <a href="article-2.html"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80" alt="貓咪"></a>
-                    <div class="mini-card-body">
-                        <span class="mini-tag">搞笑投稿</span>
-                        <a href="article-2.html"><h3 class="mini-title">盤點那些讓人噴飯的液體睡姿</h3></a>
-                        <div class="mini-meta"><span>📅 2026/03/31</span> <span style="color:var(--primary-text-blue)">👁️ 28,109</span></div>
-                    </div>
-                </article>
-
-                <article class="mini-card">
-                    <a href="article-5.html"><img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=80" alt="幼犬"></a>
-                    <div class="mini-card-body">
-                        <span class="mini-tag">新手必讀</span>
-                        <a href="article-5.html"><h3 class="mini-title">幼犬入宅第一週，這三件事不能做！</h3></a>
-                        <div class="mini-meta"><span>📅 2026/03/15</span> <span style="color:var(--primary-text-blue)">👁️ 9,842</span></div>
-                    </div>
-                </article>
-
-                <article class="mini-card">
-                    <a href="article-3.html"><img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=600&q=80" alt="貓咪水果"></a>
-                    <div class="mini-card-body">
-                        <span class="mini-tag">飲食禁忌</span>
-                        <a href="article-3.html"><h3 class="mini-title">注意！貓咪不能碰的五種日常水果</h3></a>
-                        <div class="mini-meta"><span>📅 2026/03/25</span> <span style="color:var(--primary-text-blue)">👁️ 18,531</span></div>
-                    </div>
-                </article>
+                <article class="mini-card"><a href="article-1.html"><img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80"></a><div class="mini-card-body"><a href="article-1.html"><h3 class="mini-title">換季過敏怎麼辦？醫師教你改善體質</h3></a><div class="mini-meta"><span>📅 2026/04/01</span> <span style="color:var(--primary-text-blue)">👁️ 15,243</span></div></div></article>
+                <article class="mini-card"><a href="article-2.html"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80"></a><div class="mini-card-body"><a href="article-2.html"><h3 class="mini-title">盤點那些讓人噴飯的液體睡姿</h3></a><div class="mini-meta"><span>📅 2026/03/31</span> <span style="color:var(--primary-text-blue)">👁️ 28,109</span></div></div></article>
+                <article class="mini-card"><a href="article-5.html"><img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=80"></a><div class="mini-card-body"><a href="article-5.html"><h3 class="mini-title">幼犬入宅第一週，這三件事不能做！</h3></a><div class="mini-meta"><span>📅 2026/03/15</span> <span style="color:var(--primary-text-blue)">👁️ 9,842</span></div></div></article>
+                <article class="mini-card"><a href="article-3.html"><img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=600&q=80"></a><div class="mini-card-body"><a href="article-3.html"><h3 class="mini-title">注意！貓咪不能碰的五種日常水果</h3></a><div class="mini-meta"><span>📅 2026/03/25</span> <span style="color:var(--primary-text-blue)">👁️ 18,531</span></div></div></article>
             </div>
-            <div class="ad-slot fade-in-up">🍖 廣告預留位 (In-Feed Ads) 🍖</div>
         </main>
-
         <aside>
-            <div class="widget fade-in-up">
-                <h3 class="widget-title">本週熱門排行</h3>
-                <ul style="font-size: 14px; color: #555;">
-                    <li style="margin-bottom: 12px; border-bottom: 1px solid #f5f5f5; padding-bottom: 6px;">
-                        <a href="article-3.html">• 貓咪不能吃的五種水果禁忌</a>
-                    </li>
-                    <li style="margin-bottom: 12px; border-bottom: 1px solid #f5f5f5; padding-bottom: 6px;">
-                        <a href="article-4.html">• 如何幫主子刷牙不被咬？</a>
-                    </li>
-                    <li>
-                        <a href="article-5.html">• 幼犬入宅第一週注意事項</a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="ad-slot fade-in-up" style="height: 300px; display: flex; align-items: center; justify-content: center;">🏥 廣告位 (Sidebar)</div>
-
-            <div class="widget fade-in-up" style="background: linear-gradient(135deg, #f0f8ff 0%, #ffffff 100%); border: 1px solid var(--primary-hero-blue);">
-                <h3 class="widget-title" style="border-left-color: var(--accent-gold);">網站活躍數據</h3>
-                <div style="font-size: 14px; color: #666; line-height: 2.2;">
-                    <div style="display: flex; justify-content: space-between;">
-                        <span>📈 全站累積瀏覽</span>
-                        <span style="color: var(--primary-text-blue); font-weight: bold;">582,910+</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between;">
-                        <span>🔥 今日在線人數</span>
-                        <span style="color: #2ecc71; font-weight: bold;">124 人</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between;">
-                        <span>🐾 毛孩足跡 (今日)</span>
-                        <span style="color: var(--primary-text-blue); font-weight: bold;">3,218 訪客</span>
-                    </div>
-                </div>
-            </div>
+            <div class="widget fade-in-up"><h3 class="widget-title">本週熱門排行</h3><ul><li style="margin-bottom:10px; border-bottom:1px solid #f5f5f5;"><a href="article-3.html">• 貓咪不能吃的五種水果禁忌</a></li><li style="margin-bottom:10px; border-bottom:1px solid #f5f5f5;"><a href="article-4.html">• 如何幫主子刷牙不被咬？</a></li><li><a href="article-5.html">• 幼犬入宅第一週注意事項</a></li></ul></div>
+            <div class="widget fade-in-up" style="background: linear-gradient(135deg, #f0f8ff, #fff); border: 1px solid var(--primary-hero-blue);"><h3 class="widget-title" style="border-left-color: var(--accent-gold);">網站活躍數據</h3><div style="font-size:14px; line-height:2.2;"><div style="display:flex; justify-content:space-between;"><span>📈 全站累積瀏覽</span><span style="color:var(--primary-text-blue); font-weight:bold;">582,910+</span></div><div style="display:flex; justify-content:space-between;"><span>🔥 今日在線人數</span><span style="color:#2ecc71; font-weight:bold;">124 人</span></div><div style="display:flex; justify-content:space-between;"><span>🐾 毛孩足跡</span><span style="color:var(--primary-text-blue); font-weight:bold;">3,218 訪客</span></div></div></div>
         </aside>
     </div>
 </div>
-
-<footer>
-    <div class="container">
-        <a href="index.html" class="footer-logo"><span>寵</span> 寵個毛線</a>
-        <div class="footer-links" style="margin-bottom: 30px;">
-            <a href="#">關於我們</a> | <a href="#">隱私權政策</a> | <a href="#">聯絡我們</a>
-        </div>
-        <p style="font-size: 12px; color: #888;">© 2026 寵個毛線 | 專業毛孩調養與知識分享平台. All rights reserved.</p>
-    </div>
-</footer>
-
+<footer><div class="container" style="text-align:center;"><p>© 2026 寵個毛線 | 專業毛孩調養與知識分享平台</p></div></footer>
 <script>
-    window.onscroll = function() { updateProgressBar() };
-    function updateProgressBar() {
-        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        document.getElementById("myBar").style.width = ((winScroll / height) * 100) + "%";
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in-up').forEach(function(el) { observer.observe(el); });
-    });
-
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.carousel-slide');
-    let timer;
-    function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        if (index >= slides.length) slideIndex = 0;
-        if (index < 0) slideIndex = slides.length - 1;
-        slides[slideIndex].classList.add('active');
-    }
-    function changeSlide(step) { clearInterval(timer); slideIndex += step; showSlide(slideIndex); startTimer(); }
-    function startTimer() { timer = setInterval(() => { slideIndex++; showSlide(slideIndex); }, 3000); }
-    showSlide(slideIndex);
-    startTimer();
+    window.onscroll = function() { var winScroll = document.body.scrollTop || document.documentElement.scrollTop; var height = document.documentElement.scrollHeight - document.documentElement.clientHeight; document.getElementById("myBar").style.width = ((winScroll / height) * 100) + "%"; };
+    document.addEventListener("DOMContentLoaded", function() { var observer = new IntersectionObserver(function(entries) { entries.forEach(function(entry) { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 }); document.querySelectorAll('.fade-in-up').forEach(function(el) { observer.observe(el); }); });
+    let slideIndex = 0; const slides = document.querySelectorAll('.carousel-slide'); function showSlide(index) { slides.forEach(s => s.classList.remove('active')); if (index >= slides.length) slideIndex = 0; if (index < 0) slideIndex = slides.length - 1; slides[slideIndex].classList.add('active'); }
+    function changeSlide(step) { clearInterval(timer); slideIndex += step; showSlide(slideIndex); timer = setInterval(() => { slideIndex++; showSlide(slideIndex); }, 3000); }
+    let timer = setInterval(() => { slideIndex++; showSlide(slideIndex); }, 3000);
 </script>
-
 </body>
 </html>
